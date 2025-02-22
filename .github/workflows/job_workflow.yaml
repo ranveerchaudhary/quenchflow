@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: List files to check structure
+        run: ls -R 
         
       - name: Trigger quenchflow
         run: python main.py
