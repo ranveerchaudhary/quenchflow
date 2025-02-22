@@ -1,1 +1,14 @@
+name: quenchflow_workflow
 
+on:
+  schedule:
+    - cron: '*/10 * * * *' 
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger quenchflow
+        run: python main.py
