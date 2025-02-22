@@ -9,8 +9,9 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 
+        
       - name: Trigger quenchflow
-        run: 
-          cd ${{ github.workspace }}
-          python main.py
+        run: python main.py "${{ secrets.USER_KEY }}" "${{ secrets.API_TOKEN }}" 
